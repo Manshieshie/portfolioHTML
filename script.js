@@ -39,6 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event listeners
   setupEventListeners()
+
+  // Añadir optimizaciones móviles
+  setupMobileOptimizations()
+  setupTouchNavigation()
+  optimizeMobilePerformance()
 })
 
 // Configurar event listeners
@@ -196,5 +201,135 @@ function preloadImages() {
   })
 }
 
-// Llamar a precargar imágenes
-preloadImages()
+// MEJORAS ESPECÍFICAS PARA MÓVIL
+function setupMobileOptimizations() {
+  const isMobile = window.innerWidth <= 768
+
+  if (isMobile) {
+    // Desactivar scroll-snap en móviles
+    const portfolioContainer = document.querySelector(".portfolio-container")
+    portfolioContainer.style.scrollSnapType = "none"
+
+    // Mejorar el scroll suave en móviles
+    portfolioContainer.style.scrollBehavior = "smooth"
+    portfolioContainer.style.overscrollBehavior = "contain"
+
+    // Ajustar la detección de secciones para móvil
+    setupMobileScrollObserver()
+
+    // Prevenir zoom accidental en inputs
+    const metaViewport = document.querySelector('meta[name="viewport"]')
+    if (metaViewport) {
+      metaViewport.setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    }
+  }
+}
+
+// Observer específico para móvil con mejor detección
+function setupMobileScrollObserver() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionIndex = Number.parseInt(entry.target.dataset.section)
+          updateCurrentSection(sectionIndex)
+          activateSection(sectionIndex)
+        }
+      })
+    },
+    {
+      threshold: 0.3, // Reducir threshold para móvil
+      rootMargin: "-20% 0px -20% 0px", // Más margen para móvil
+    },
+  )
+
+  sections.forEach((section) => {
+    observer.observe(section)
+  })
+}
+
+// Mejorar navegación táctil
+function setupTouchNavigation() {
+  let touchStartY = 0
+  let touchEndY = 0
+
+  const portfolioContainer = document.querySelector(".portfolio-container")
+
+  portfolioContainer.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartY = e.changedTouches[0].screenY
+    },
+    { passive: true },
+  )
+
+  portfolioContainer.addEventListener(
+    "touchend",
+    (e) => {
+      touchEndY = e.changedTouches[0].screenY
+      handleSwipeGesture()
+    },
+    { passive: true },
+  )
+
+  function handleSwipeGesture() {
+    const swipeThreshold = 50
+    const diff = touchStartY - touchEndY
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe up - ir a siguiente sección
+        if (currentSection < sections.length - 1) {
+          scrollToSection(currentSection + 1)
+        }
+      } else {
+        // Swipe down - ir a sección anterior
+        if (currentSection > 0) {
+          scrollToSection(currentSection - 1)
+        }
+      }
+    }
+  }
+}
+
+// Optimizar rendimiento en móvil
+function optimizeMobilePerformance() {
+  const isMobile = window.innerWidth <= 768
+
+  if (isMobile) {
+    // Reducir frecuencia de animaciones
+    const animatedElements = document.querySelectorAll(".animate-element")
+    animatedElements.forEach((el) => {
+      el.style.transitionDuration = "0.4s"
+    })
+
+    // Desactivar efectos pesados
+    const particles = document.querySelector(".floating-particles")
+    const gridLines = document.querySelector(".grid-lines")
+    const animatedBg = document.querySelector(".animated-background")
+
+    if (particles) particles.style.display = "none"
+    if (gridLines) gridLines.style.display = "none"
+    if (animatedBg) {
+      const bgBefore = window.getComputedStyle(animatedBg, "::before")
+      animatedBg.style.setProperty("--animation-duration", "none")
+    }
+  }
+}
+
+// Reajustar en cambio de orientación
+window.addEventListener("orientationchange", () => {
+  setTimeout(() => {
+    setupMobileOptimizations()
+    optimizeMobilePerformance()
+  }, 100)
+})
+
+// Reajustar en resize
+window.addEventListener(
+  "resize",
+  debounce(() => {
+    setupMobileOptimizations()
+    optimizeMobilePerformance()
+  }, 250),
+)
