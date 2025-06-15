@@ -1127,7 +1127,7 @@ body.light-theme {
 
   .typewriter-cursor {
     width: clamp(3px, 0.8vw, 5px);
-    height: 1em;
+    height: 13em;
     margin-left: clamp(1px, 0.3vw, 3px);
   }
 
