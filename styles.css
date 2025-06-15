@@ -863,7 +863,7 @@ body.light-theme {
   display: inline-block;
   padding: 0.5rem 1rem;
   border: 1px solid #6b7280;
-  color: #ffffff; /* Cambiar de #e0e0e0 a #ffffff para que sea blanco */
+  color: #ffffff;
   background: transparent;
   border-radius: 0.25rem;
   transition: all 0.3s ease;
@@ -872,6 +872,7 @@ body.light-theme {
   cursor: pointer;
   font-family: inherit;
   font-size: 0.875rem;
+  text-decoration: none;
 }
 
 .contact-button:hover {
@@ -897,6 +898,7 @@ body.light-theme {
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.75rem;
+  display: inline-block;
 }
 
 /* UTILIDADES */
@@ -1145,6 +1147,13 @@ body.light-theme {
 
   .contact-card {
     padding: 1.5rem 1rem;
+  }
+
+  /* BOTONES MÁS GRANDES PARA TÁCTIL */
+  .contact-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px; /* Tamaño mínimo recomendado para táctil */
   }
 
   /* INFO MÓVIL */
