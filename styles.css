@@ -551,7 +551,7 @@ body.light-theme {
 .typewriter-cursor {
   display: inline-block;
   width: clamp(4px, 1vw, 8px);
-  height: 1em;
+  height: 13rem;
   background-color: #ffffff;
   margin-left: clamp(2px, 0.5vw, 6px);
   animation: blink 1s infinite;
