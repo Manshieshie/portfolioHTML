@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julen Román Ledo - Portfolio</title>
+    <meta name="description" content="Portfolio minimalista de un Desarrollador de Aplicaciones">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧊</text></svg>">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de carga -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="text-center">
+            <div class="hero-word mb-4">LOADING</div>
+            <div class="retro-ui text-gray-400">Inicializando_Portfolio.exe</div>
+            <div class="loading-dots">
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fondo animado -->
+    <div class="animated-background"></div>
+
+    <!-- Partículas flotantes -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Grid sutil -->
+    <div class="grid-lines"></div>
+
+    <div class="portfolio-container">
+        <!-- Navegación minimalista -->
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li class="nav-item retro-ui active" data-section="0">01. Home</li>
+                <li class="nav-item retro-ui" data-section="1">02. Projects</li>
+                <li class="nav-item retro-ui" data-section="2">03. Info</li>
+                <li class="nav-item retro-ui" data-section="3">04. Contact</li>
+            </ul>
+        </nav>
+
+        <!-- Botón de cambio de tema -->
+        <div class="theme-toggle" id="theme-toggle">
+            <i data-lucide="sun"></i>
+        </div>
+
+        <!-- Contador de sección -->
+        <div class="section-counter">
+            <div class="retro-ui text-gray-400">
+                <span id="current-section">01</span> / 04
+            </div>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator" id="scroll-indicator">
+            <i data-lucide="chevron-down"></i>
+        </div>
+
+        <!-- SECCIÓN 1: HOME -->
+        <section class="portfolio-section section-visible" id="home" data-section="0">
+            <div class="section-content text-center">
+                <div class="animate-element slide-up">
+                    <div class="typewriter-container mb-8">
+                        <span class="typewriter-text" id="typewriter-text"></span>
+                        <span class="typewriter-cursor" id="typewriter-cursor"></span>
+                    </div>
+                </div>
+
+                <div class="animate-element slide-up delay-300">
+                    <div class="detail-text max-w-2xl mx-auto text-gray-300 opacity-80">
+                        <p class="text-lg mb-4">Desarrollador de Aplicaciones</p>
+                        <p>
+                            Estudiante apasionado por la tecnología, especializado en desarrollo frontend y backend. 
+                            Abierto a oportunidades laborales para aplicar mis conocimientos y seguir creciendo profesionalmente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: PROJECTS -->
+        <section class="portfolio-section" id="projects" data-section="1">
+            <div class="section-content">
+                <div class="animate-element fade-in">
+                    <div class="text-center mb-16">
+                        <h2 class="section-word mb-6">PROJECTS</h2>
+                        <p class="detail-text text-lg text-gray-300 opacity-70 max-w-2xl mx-auto">
+                            Mis proyectos reales aplicando conceptos de desarrollo web y programación
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-grid">
+                    <!-- Proyecto 1 -->
+                    <div class="project-card animate-element scale-in delay-400">
+                        <div class="card-header">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="badge retro-ui border-gray-500 text-gray-300">Web Community</span>
+                                <div class="flex items-center space-x-2">
+                                    <i data-lucide="globe" class="h-6 w-6"></i>
+                                    <a href="https://rpgop.forumcommunity.net" target="_blank" rel="noopener noreferrer" class="external-link">
+                                        <i data-lucide="external-link" class="h-4 w-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="card-title text-xl mb-2 text-white">RPG OP - Comunidad Gaming</h3>
+                            <p class="card-description detail-text text-gray-300">
+                                Página web completa para comunidad de RPG creada con ForumCommunity, aplicando principios de UX y diseño de comunidades online.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="pixel-text mb-2 text-gray-400">Concepto_Aplicado:</div>
+                                    <div class="text-sm opacity-70 text-gray-300">Front-end Development - Diseño de Comunidades Online y Arquitectura de Foros</div>
+                                </div>
+                                <div>
+                                    <div class="pixel-text mb-2 text-gray-400">Tecnologias_Usadas:</div>
+                                    <div class="tech-badges">
+                                        <span class="tech-badge">ForumCommunity</span>
+                                        <span class="tech-badge">CSS Custom</span>
+                                        <span class="tech-badge">JavaScript</span>
+                                        <span class="tech-badge">HTML</span>
+                                        <span class="tech-badge">UX Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="project-card animate-element scale-in delay-600">
+                        <div class="card-header">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="badge retro-ui border-gray-500 text-gray-300">Bot Development</span>
+                                <div class="flex items-center space-x-2">
+                                    <i data-lucide="bot" class="h-6 w-6"></i>
+                                    <span class="badge-secondary retro-ui text-xs bg-gray-700 text-gray-300">En Desarrollo</span>
+                                </div>
+                            </div>
+                            <h3 class="card-title text-xl mb-2 text-white">Discord Bot Personalizado</h3>
+                            <p class="card-description detail-text text-gray-300">
+                                Bot de Discord desarrollado desde cero con funcionalidades avanzadas para gestión de servidores y automatización de tareas.
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="pixel-text mb-2 text-gray-400">Concepto_Aplicado:</div>
+                                    <div class="text-sm opacity-70 text-gray-300">Desarrollo Backend - Lógica de Programación y APIs</div>
+                                </div>
+                                <div>
+                                    <div class="pixel-text mb-2 text-gray-400">Tecnologias_Usadas:</div>
+                                    <div class="tech-badges">
+                                        <span class="tech-badge">Python</span>
+                                        <span class="tech-badge">discord.py</span>
+                                        <span class="tech-badge">API Integration</span>
+                                        <span class="tech-badge">MongoDB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: INFO -->
+        <section class="portfolio-section" id="info" data-section="2">
+            <div class="section-content">
+                <div class="animate-element fade-in">
+                    <div class="text-center mb-16">
+                        <h2 class="section-word mb-6">INFO</h2>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="text-center animate-element slide-left delay-300">
+                        <div class="profile-image">
+                            <img src="images/profile-photo.jpeg" alt="Julen Román Ledo - Foto de perfil" />
+                        </div>
+                    </div>
+
+                    <div class="info-content animate-element slide-right delay-500">
+                        <div>
+                            <h3 class="text-3xl font-bold mb-2 text-white">Julen Román Ledo</h3>
+                            <div class="pixel-text text-gray-400 mb-4">Desarrollador_de_Aplicaciones.exe</div>
+                        </div>
+
+                        <div class="info-details">
+                            <div class="info-item">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-gray-400"></i>
+                                <span class="detail-text text-gray-300">España</span>
+                            </div>
+
+                            <div class="info-item">
+                                <i data-lucide="calendar" class="h-5 w-5 text-gray-400"></i>
+                                <span class="detail-text text-gray-300">Desarrollador de Aplicaciones - 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="bio-section">
+                            <div>
+                                <div class="pixel-text mb-2 text-gray-400">Biografia.txt:</div>
+                                <p class="detail-text text-gray-300 leading-relaxed">
+                                    Soy Julen Román Ledo, un desarrollador de aplicaciones apasionado por la tecnología. 
+                                    Actualmente me encuentro estudiando pero estoy abierto a oportunidades laborales que me 
+                                    permitan crecer profesionalmente.
+                                </p>
+                            </div>
+
+                            <div>
+                                <p class="detail-text text-gray-300 leading-relaxed">
+                                    Mi enfoque se centra en el desarrollo tanto frontend como backend, aplicando las mejores 
+                                    prácticas y manteniéndome actualizado con las últimas tendencias tecnológicas del sector.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="pixel-text mb-2 text-gray-400">Skills.json:</div>
+                            <div class="skills-badges">
+                                <span class="skill-badge">JavaScript</span>
+                                <span class="skill-badge">TypeScript</span>
+                                <span class="skill-badge">CSS</span>
+                                <span class="skill-badge">HTML</span>
+                                <span class="skill-badge">C++</span>
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: CONTACT -->
+        <section class="portfolio-section" id="contact" data-section="3">
+            <div class="section-content">
+                <div class="animate-element fade-in">
+                    <div class="mb-8 text-center">
+                        <h2 class="section-word mb-6">CONTACT</h2>
+                        <p class="detail-text text-lg text-gray-300 opacity-70 max-w-2xl mx-auto">
+                            ¿Tienes un proyecto interesante? Me encanta colaborar en ideas creativas
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Email -->
+                    <div class="tarjeta-contacto animate-element scale-in delay-300">
+                        <i data-lucide="mail" class="h-6 w-6 mx-auto mb-3 text-gray-300"></i>
+                        <div class="pixel-text mb-2 text-gray-400">Email.exe</div>
+                        <div class="detail-text text-gray-300 mb-3">julenrmn@gmail.com</div>
+                        <button class="boton-contacto" onclick="window.open('mailto:julenrmn@gmail.com', '_blank')">Enviar Email</button>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="tarjeta-contacto animate-element scale-in delay-400">
+                        <i data-lucide="linkedin" class="h-6 w-6 mx-auto mb-3 text-gray-300"></i>
+                        <div class="pixel-text mb-2 text-gray-400">LinkedIn.exe</div>
+                        <div class="detail-text text-gray-300 mb-3">Julen Román Ledo</div>
+                        <button class="boton-contacto" onclick="window.open('https://www.linkedin.com/in/julen-roman-ledo-41a06730a/', '_blank')">Ver Perfil</button>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="tarjeta-contacto animate-element scale-in delay-500">
+                        <i data-lucide="github" class="h-6 w-6 mx-auto mb-3 text-gray-300"></i>
+                        <div class="pixel-text mb-2 text-gray-400">GitHub.exe</div>
+                        <div class="detail-text text-gray-300 mb-3">Manshieshie</div>
+                        <button class="boton-contacto" onclick="window.open('https://github.com/Manshieshie', '_blank')">Ver Código</button>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="tarjeta-contacto animate-element scale-in delay-600">
+                        <i data-lucide="calendar" class="h-6 w-6 mx-auto mb-3 text-gray-300"></i>
+                        <div class="pixel-text mb-2 text-gray-400">Status.exe</div>
+                        <div class="detail-text text-gray-300 mb-3">Disponible para trabajo</div>
+                        <span class="estado">Disponible</span>
+                    </div>
+                </div>
+
+                <div class="animate-element fade-in delay-700">
+                    <div class="retro-ui text-gray-500 opacity-60 text-center">
+                        Respuesta_Promedio: 24-48h<br>
+                        Timezone: GMT+1 (Madrid)
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
